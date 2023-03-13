@@ -2,9 +2,25 @@ import { Card, CardBody, CardTitle, CardText, Button, Col } from "reactstrap";
 
 function BlogComponent({ blog }) {
 	const addToWishlist = () => {
-		const newProducts = [];
-		newProducts.push(blog);
-		localStorage.setItem("bloguri", JSON.stringify(newProducts));
+		const blogsString = localStorage.getItem("bloguri");
+
+		if (blogsString !== null) {
+			const blogs = JSON.parse(blogsString);
+
+			const existNr = blogs.find((blogElement) => {
+				return blogElement.id === blog.id;
+			});
+
+			if (existNr === undefined) {
+				blogs.push(blog);
+			}
+
+			localStorage.setItem("bloguri", JSON.stringify(blogs));
+		} else {
+			const newBlogs = [];
+			newBlogs.push(blog);
+			localStorage.setItem("bloguri", JSON.stringify(newBlogs));
+		}
 	};
 
 	return (

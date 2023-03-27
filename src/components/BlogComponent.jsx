@@ -24,8 +24,8 @@ function BlogComponent({ blog }) {
 	};
 
 	return (
-		<Col className='mt-4'>
-			<Card>
+		<Col className='mt-4 h-100' style={{ minHeight: "550px" }}>
+			<Card style={{ minHeight: "550px" }}>
 				<img
 					alt='Sample'
 					src={"https://picsum.photos/300/200?random=" + blog.id}

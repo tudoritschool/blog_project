@@ -60,7 +60,7 @@ function Blogs() {
 								setTextInput(event.target.value);
 							}}
 						/>
-						<Row xs='1' lg='5'>
+						<Row xs='1' lg='5' className='card-deck'>
 							{blogList
 								.filter((blog) => {
 									return selectedUser === null || selectedUser === blog.userId;

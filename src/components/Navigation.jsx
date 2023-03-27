@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Navigation.style.css";
 
-function Navigation() {
+const Navigation = () => {
+	// function numeFunctie() {}
+	// const numeFunctie = () => {}
 	return (
 		<div className='navbar_blog'>
 			<Link to='/home'>Home</Link>
@@ -9,6 +11,6 @@ function Navigation() {
 			<Link to='/wishlist'>Favorite Blogs</Link>
 		</div>
 	);
-}
+};
 
 export default Navigation;
